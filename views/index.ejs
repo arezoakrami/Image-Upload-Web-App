@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>Uploaded Images</h1>
+  <a href="/upload">Upload New Image</a> | <a href="/gallery">View Gallery</a>
+  <ul>
+    <% images.forEach(img => { %>
+      <li>
+        <img src="/uploads/<%= img.filename %>" width="200" />
+        <p><%= img.originalname %> | Uploaded on: <%= new Date(img.uploadDate).toLocaleString() %></p>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
